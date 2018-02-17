@@ -1,5 +1,3 @@
-import { commandRegistry } from './CommandRegistry';
-
 export interface ICommand {
   title: string;
   description?: string;
