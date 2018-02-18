@@ -6,7 +6,6 @@ export interface ICommand {
   onDeselect?(): void;
 }
 
-
 export class Command implements ICommand {
   title: string;
   description: string;

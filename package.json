@@ -2,21 +2,22 @@
   "name": "darkflex",
   "version": "0.1.0",
   "description": "Command search",
-  "main": "dist/index.amd.js",
+  "main": "dist/darkflex.umd.js",
+  "types": "dist/dist/index.d.ts",
   "scripts": {
-    "build": "npm run clean && npm run build:typescript",
-    "build:typescript": "tsc",
-    "clean": "rm -rf dist",
-    "start": "npm run clean && npm run start:typescript",
-    "start:typescript": "tsc-watch",
+    "build": "npm run clean && webpack",
+    "clean": "rimraf dist",
+    "start": "npm run build -- --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Matt Johnson <hello@mattpjohnson.com>",
   "license": "ISC",
   "devDependencies": {
     "editorconfig": "^0.15.0",
-    "tsc-watch": "^1.0.16",
-    "typescript": "^2.7.1"
+    "rimraf": "^2.6.2",
+    "ts-loader": "^3.5.0",
+    "typescript": "^2.7.2",
+    "webpack": "^3.11.0"
   },
   "dependencies": {
     "requirejs": "^2.3.5"

@@ -15,5 +15,5 @@ export declare class Command implements ICommand {
     constructor({title, description, run, onSelect, onDeselect}: ICommand);
     run(): void;
     isAvailable(): boolean;
-    matches(input: string): 0 | 10 | 5;
+    matches(input: string): 10 | 5 | 0;
 }
