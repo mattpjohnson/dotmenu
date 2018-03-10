@@ -106,6 +106,7 @@ export class UI {
     for (const command of group.filteredCommands) {
       const resultLi = UI.createResultLiElement(command);
       command.element = resultLi;
+      resultLi.addEventListener('click', () => this.emitRun());
       resultLi.addEventListener('mouseover', event => {
         for (const subscriber of this.selectSubscribers) {
           subscriber(command);
