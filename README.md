@@ -2,7 +2,7 @@
 Command search library.
 
 ## Installation
-`bash
+`
 npm install --save-dev darkflex
 `
 
