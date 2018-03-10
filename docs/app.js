@@ -1,7 +1,6 @@
 require.config({
     paths: {
-        // Darkflex: 'https://rawgit.com/mattpjohnson/darkflex/master/dist/darkflex.umd.min',
-        Darkflex: '../dist/darkflex.umd.min'
+        Darkflex: 'https://rawgit.com/mattpjohnson/darkflex/master/dist/darkflex.umd.min',
     }
 });
 
