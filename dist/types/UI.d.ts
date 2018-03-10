@@ -24,6 +24,7 @@ export declare class UI {
     openMenuIfNoActiveInputs(): void;
     selectCommand(command: Command): void;
     deselectCommand(command: Command): void;
+    onDocumentClick(event: MouseEvent): void;
     onKeydown(event: KeyboardEvent): void;
     onInput(subscriber: Function): void;
     onOpen(subscriber: Function): void;

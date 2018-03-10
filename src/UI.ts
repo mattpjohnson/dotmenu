@@ -15,6 +15,9 @@ export class UI {
   private selectSubscribers: Array<Function> = [];
 
   constructor() {
+    this.onDocumentClick = this.onDocumentClick.bind(this);
+    this.onKeydown = this.onKeydown.bind(this);
+
     this.menuElement = UI.createMenuElement();
     this.inputElement = UI.createInputElement();
     this.groupsUlElement = UI.createGroupsUlElement();
@@ -55,7 +58,7 @@ export class UI {
   private static createMenuElement() {
     const div = document.createElement('div');
     div.classList.add('darkflex');
-    div.tabIndex = 1;
+    div.tabIndex = -1;
     return div;
   }
 
@@ -125,7 +128,8 @@ export class UI {
 
   openMenu() {
     this.menuElement.classList.add('darkflex--open');
-    document.addEventListener('keydown', this.onKeydown.bind(this));
+    document.addEventListener('click', this.onDocumentClick);
+    document.addEventListener('keydown', this.onKeydown);
 
     for (const subscriber of this.openSubscribers) {
       subscriber();
@@ -138,6 +142,7 @@ export class UI {
     this.menuElement.classList.remove('darkflex--open');
     this.inputElement.value = '';
     document.removeEventListener('keydown', this.onKeydown);
+    document.removeEventListener('blur', this.onDocumentClick);
   }
 
   openMenuIfNoActiveInputs() {
@@ -158,6 +163,12 @@ export class UI {
 
   deselectCommand(command: Command) {
     command.element.classList.remove('darkflex__command--selected');
+  }
+
+  onDocumentClick(event: MouseEvent) {
+    if (!this.menuElement.contains(event.target as Node)) {
+      this.closeMenu();
+    }
   }
 
   onKeydown(event: KeyboardEvent) {
@@ -186,6 +197,7 @@ export class UI {
     for (const subscriber of this.runSubscribers) {
       subscriber();
     }
+    this.closeMenu();
   }
 
   dotEventListener(event: KeyboardEvent) {
