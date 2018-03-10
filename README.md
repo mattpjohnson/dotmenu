@@ -7,4 +7,4 @@ npm install --save-dev darkflex
 `
 
 ## Demo
-See the [demo](mattpjohnson.github.io/darkflex)
+See the [demo](https://mattpjohnson.github.io/darkflex)
