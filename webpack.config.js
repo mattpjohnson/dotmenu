@@ -4,7 +4,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: {
-    darkflex: ['./src/index.ts', './src/styles/styles.scss']
+    darkflex: ['./src/index.ts'],
+    styles: ['./src/styles/styles.scss']
   },
 
   module: {
@@ -20,7 +21,7 @@ module.exports = {
       // Sass
       {
         test: /\.scss$/,
-        use: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
+        use: ExtractTextPlugin.extract(['css-loader', 'autoprefixer-loader', 'sass-loader'])
       }
     ]
   },
@@ -35,7 +36,7 @@ module.exports = {
     new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.optimize.UglifyJsPlugin(),
     new ExtractTextPlugin({
-      filename: '[name].min.css'
+      filename: 'darkflex.min.css'
     })
   ],
 

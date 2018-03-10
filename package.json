@@ -5,14 +5,19 @@
   "main": "dist/darkflex.umd.js",
   "types": "dist/types/index.d.ts",
   "scripts": {
-    "build": "npm run clean && webpack",
+    "build": "npm run clean && webpack && rimraf dist/styles.*.js",
     "clean": "rimraf dist",
     "start": "npm run build -- --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Matt Johnson <hello@mattpjohnson.com>",
   "license": "ISC",
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
   "devDependencies": {
+    "autoprefixer-loader": "^3.2.0",
     "css-loader": "^0.28.10",
     "editorconfig": "^0.15.0",
     "extract-text-webpack-plugin": "^3.0.2",
