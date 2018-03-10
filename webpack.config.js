@@ -1,14 +1,27 @@
 const path = require('path');
 const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: {
-    darkflex: './src/index.ts'
+    darkflex: ['./src/index.ts', './src/styles/styles.scss']
   },
 
   module: {
-    loaders: [
-        { test: /\.ts$/, loader: 'ts-loader' }
+    rules: [
+      // TypeScript
+      {
+        test: /\.ts$/,
+        use: [{
+          loader: 'ts-loader'
+        }]
+      },
+
+      // Sass
+      {
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
+      }
     ]
   },
 
@@ -22,9 +35,12 @@ module.exports = {
   plugins: [
     new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.optimize.UglifyJsPlugin(),
+    new ExtractTextPlugin({
+      filename: '[name].min.css'
+    })
   ],
 
   resolve: {
-    extensions: ['.ts']
+    extensions: ['.ts', '.js']
   }
 };

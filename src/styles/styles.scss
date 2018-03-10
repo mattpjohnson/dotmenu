@@ -1,0 +1,93 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+@import 'theme-mixins.scss';
+@import 'themes.scss';
+
+.darkflex {
+    @include themify($themes) {
+        background-color: themed('bg-color');
+        font-family: themed('font-family');
+    }
+
+    border: 1px solid gray;
+    border-radius: 4px;
+    box-shadow: 2px 2px 4px 3px rgba(80, 80, 80, 0.25);
+    box-sizing: border-box;
+    display: none;
+    left: calc(50% - 200px);
+    max-width: 90vw;
+    position: fixed;
+    top: 50px;
+    width: 400px;
+}
+
+.darkflex:focus,
+.darkflex__input:focus {
+    outline: none;
+}
+
+.darkflex--open {
+    display: block;
+}
+
+.darkflex__input {
+    @include themify($themes) {
+        color: themed('input-text-color');
+    }
+
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #03A9F4;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px;
+    width: 100%;
+}
+
+.darkflex__results {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.darkflex__groups,
+.darkflex__commands {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.darkflex__group {
+    margin: 8px 0;
+}
+
+.darkflex__group-title {
+    @include themify($themes) {
+        color: themed('group-title-text-color');
+    }
+
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 8px;
+    text-transform: uppercase;
+}
+
+.darkflex__command-title {
+    padding: 6px 16px;
+}
+
+.darkflex__command {
+    @include themify($themes) {
+        color: themed('command-text-color');
+    }
+
+    cursor: pointer;
+}
+
+.darkflex__command--selected {
+    @include themify($themes) {
+        background-color: themed('command-bg-color--selected-state');
+        color: themed('command-text-color--selected-state');
+    }
+
+    font-weight: 500;
+}

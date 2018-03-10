@@ -1,0 +1,38 @@
+$themes: (
+    blue-light: (
+        bg-color: #fff,
+        command-bg-color--selected-state: #03A9F4,
+        command-text-color--selected-state: #fff,
+        command-text-color: #333,
+        font-family: 'Open Sans',
+        group-title-text-color: #03A9F4,
+        input-text-color: #333
+    ),
+    blue-dark: (
+        bg-color: #313b41,
+        command-bg-color--selected-state: #03A9F4,
+        command-text-color--selected-state: #e6eff7,
+        command-text-color: #767778,
+        font-family: 'Open Sans',
+        group-title-text-color: #a6a7a7,
+        input-text-color: #c3c3c3
+    ),
+    teal-light: (
+        bg-color: #fff,
+        command-bg-color--selected-state: #009688,
+        command-text-color--selected-state: #e6eff7,
+        command-text-color: #767778,
+        font-family: 'Open Sans',
+        group-title-text-color: #009688,
+        input-text-color: #333
+    ),
+    teal-dark: (
+        bg-color: #313b41,
+        command-bg-color--selected-state: #009688,
+        command-text-color--selected-state: #e6eff7,
+        command-text-color: #767778,
+        font-family: 'Open Sans',
+        group-title-text-color: #a6a7a7,
+        input-text-color: #c3c3c3
+    )
+);

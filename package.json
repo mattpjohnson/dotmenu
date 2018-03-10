@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Command search",
   "main": "dist/darkflex.umd.js",
-  "types": "dist/dist/index.d.ts",
+  "types": "dist/types/index.d.ts",
   "scripts": {
     "build": "npm run clean && webpack",
     "clean": "rimraf dist",
@@ -13,8 +13,12 @@
   "author": "Matt Johnson <hello@mattpjohnson.com>",
   "license": "ISC",
   "devDependencies": {
+    "css-loader": "^0.28.10",
     "editorconfig": "^0.15.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "node-sass": "^4.7.2",
     "rimraf": "^2.6.2",
+    "sass-loader": "^6.0.7",
     "ts-loader": "^3.5.0",
     "typescript": "^2.7.2",
     "webpack": "^3.11.0"

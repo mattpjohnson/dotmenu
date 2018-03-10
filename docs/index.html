@@ -6,9 +6,56 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Darkflex demo</title>
 
-  <link rel="stylesheet" href="https://rawgit.com/mattpjohnson/darkflex/master/themes/default.css">
+  <link rel="stylesheet" href="https://rawgit.com/mattpjohnson/darkflex/master/dist/darkflex.min.css">
 </head>
 <body>
+  <div>
+    <label>
+      <input
+        checked
+        onchange="handleThemeChange(this.value)"
+        name="theme"
+        type="radio"
+        value="blue-light"
+      >
+
+      Blue (light)
+    </label>
+
+    <label>
+      <input
+        onchange="handleThemeChange(this.value)"
+        name="theme"
+        type="radio"
+        value="blue-dark"
+      >
+
+      Blue (dark)
+    </label>
+
+    <label>
+      <input
+        onchange="handleThemeChange(this.value)"
+        name="theme"
+        type="radio"
+        value="teal-light"
+      >
+
+      Teal (light)
+    </label>
+
+    <label>
+        <input
+          onchange="handleThemeChange(this.value)"
+          name="theme"
+          type="radio"
+          value="teal-dark"
+        >
+
+        Teal (dark)
+      </label>
+  </div>
+
   <button id="click-this-button" onclick="console.log(`'Click this button' has been clicked`)">Click this button</button>
   <script src="https://rawgit.com/mattpjohnson/darkflex/master/dist/darkflex.umd.js"></script>
   <script src="./app.js"></script>
