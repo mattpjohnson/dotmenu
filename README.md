@@ -1,5 +1,5 @@
 # Darkflex
-Command search library.
+Command menu for modern browsers.
 
 ## Installation
 `

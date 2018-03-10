@@ -1,7 +1,7 @@
 {
   "name": "darkflex",
   "version": "0.1.0",
-  "description": "Command search",
+  "description": "Command menu for modern browsers",
   "main": "dist/darkflex.umd.js",
   "types": "dist/types/index.d.ts",
   "scripts": {

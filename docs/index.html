@@ -6,58 +6,89 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Darkflex demo</title>
 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:700">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/Swaagie/prismjs-monokai/3d414719/prism-monokai.css">
+  <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="https://rawgit.com/mattpjohnson/darkflex/master/dist/darkflex.min.css">
 </head>
 <body>
-  <div>
-    <label>
-      <input
-        checked
-        onchange="handleThemeChange(this.value)"
-        name="theme"
-        type="radio"
-        value="blue-light"
+  <div class="container">
+    <h1 class="banner display-1">Darkflex</h1>
+
+    <p class="lead">
+      Command menu for modern browsers.
+    </p>
+
+    <section id="demo">
+      <h1>Demo</h1>
+
+      <p>Open the menu by pressing the <kbd>.</kbd> key.</p>
+
+      <div>
+        <label>
+          <input
+            checked
+            onchange="handleThemeChange(this.value)"
+            name="theme"
+            type="radio"
+            value="blue-light"
+          >
+
+          Blue (light)
+        </label>
+
+        <label>
+          <input
+            onchange="handleThemeChange(this.value)"
+            name="theme"
+            type="radio"
+            value="blue-dark"
+          >
+
+          Blue (dark)
+        </label>
+
+        <label>
+          <input
+            onchange="handleThemeChange(this.value)"
+            name="theme"
+            type="radio"
+            value="teal-light"
+          >
+
+          Teal (light)
+        </label>
+
+        <label>
+            <input
+              onchange="handleThemeChange(this.value)"
+              name="theme"
+              type="radio"
+              value="teal-dark"
+            >
+
+            Teal (dark)
+          </label>
+      </div>
+
+      <button
+        class="btn btn-primary"
+        id="click-this-button"
+        onclick="console.log(`'Click this button' has been clicked`)"
       >
+        Click this button
+      </button>
 
-      Blue (light)
-    </label>
+      <pre><code id="console-log-output" class="language-bash"></code></pre>
 
-    <label>
-      <input
-        onchange="handleThemeChange(this.value)"
-        name="theme"
-        type="radio"
-        value="blue-dark"
-      >
-
-      Blue (dark)
-    </label>
-
-    <label>
-      <input
-        onchange="handleThemeChange(this.value)"
-        name="theme"
-        type="radio"
-        value="teal-light"
-      >
-
-      Teal (light)
-    </label>
-
-    <label>
-        <input
-          onchange="handleThemeChange(this.value)"
-          name="theme"
-          type="radio"
-          value="teal-dark"
-        >
-
-        Teal (dark)
-      </label>
+    </section>
   </div>
 
-  <button id="click-this-button" onclick="console.log(`'Click this button' has been clicked`)">Click this button</button>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.11.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.11.0/components/prism-javascript.min.js"></script>
   <script src="https://rawgit.com/mattpjohnson/darkflex/master/dist/darkflex.umd.js"></script>
+  <script src="./console.log.hijacker.js"></script>
   <script src="./app.js"></script>
 </body>
 </html>
