@@ -26,9 +26,8 @@ module.exports = {
   },
 
   output: {
-    filename: '[name].umd.js',
+    filename: '[name].umd.min.js',
     path: path.resolve('./dist'),
-    library: 'Darkflex',
     libraryTarget: 'umd'
   },
 
