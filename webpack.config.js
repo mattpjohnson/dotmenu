@@ -4,7 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: {
-    darkflex: ['./src/index.ts'],
+    dotmenu: ['./src/index.ts'],
     styles: ['./src/styles/styles.scss']
   },
 
@@ -36,7 +36,7 @@ module.exports = {
     new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.optimize.UglifyJsPlugin(),
     new ExtractTextPlugin({
-      filename: 'darkflex.min.css'
+      filename: 'dotmenu.min.css'
     })
   ],
 

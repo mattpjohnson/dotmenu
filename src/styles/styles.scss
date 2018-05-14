@@ -2,7 +2,7 @@
 @import 'theme-mixins.scss';
 @import 'themes.scss';
 
-.darkflex {
+.dotmenu {
     @include themify($themes) {
         background-color: themed('bg-color');
         font-family: themed('font-family');
@@ -20,16 +20,16 @@
     width: 400px;
 }
 
-.darkflex:focus,
-.darkflex__input:focus {
+.dotmenu:focus,
+.dotmenu__input:focus {
     outline: none;
 }
 
-.darkflex--open {
+.dotmenu--open {
     display: block;
 }
 
-.darkflex__input {
+.dotmenu__input {
     @include themify($themes) {
         color: themed('input-text-color');
     }
@@ -44,23 +44,23 @@
     width: 100%;
 }
 
-.darkflex__results {
+.dotmenu__results {
     max-height: 300px;
     overflow-y: auto;
 }
 
-.darkflex__groups,
-.darkflex__commands {
+.dotmenu__groups,
+.dotmenu__commands {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.darkflex__group {
+.dotmenu__group {
     margin: 8px 0;
 }
 
-.darkflex__group-title {
+.dotmenu__group-title {
     @include themify($themes) {
         color: themed('group-title-text-color');
     }
@@ -71,11 +71,11 @@
     text-transform: uppercase;
 }
 
-.darkflex__command-title {
+.dotmenu__command-title {
     padding: 6px 16px;
 }
 
-.darkflex__command {
+.dotmenu__command {
     @include themify($themes) {
         color: themed('command-text-color');
     }
@@ -83,7 +83,7 @@
     cursor: pointer;
 }
 
-.darkflex__command--selected {
+.dotmenu__command--selected {
     @include themify($themes) {
         background-color: themed('command-bg-color--selected-state');
         color: themed('command-text-color--selected-state');
