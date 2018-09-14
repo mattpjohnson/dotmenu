@@ -26,7 +26,11 @@
     ],
     "transform": {
       "^.+\\.(ts|tsx)$": "ts-jest"
-    }
+    },
+    "testResultsProcessor": "jest-sonar-reporter"
+  },
+  "jestSonar": {
+    "reportPath": "coverage"
   },
   "husky": {
     "hooks": {
@@ -40,6 +44,7 @@
     "babel-jest": "^23.6.0",
     "husky": "^1.0.0-rc.13",
     "jest": "^23.5.0",
+    "jest-sonar-reporter": "^2.0.0",
     "node-sass": "^4.9.3",
     "postcss-cli": "^6.0.0",
     "prettier": "^1.14.2",
