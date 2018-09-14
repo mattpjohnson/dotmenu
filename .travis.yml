@@ -1,0 +1,17 @@
+language: node_js
+
+node_js:
+  - node
+  - '6'
+  - '10'
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
+
+install:
+  - yarn install
+
+script:
+  - yarn build
