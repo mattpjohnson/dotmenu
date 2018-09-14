@@ -10,12 +10,12 @@ export declare class UI {
     private runSubscribers;
     private selectSubscribers;
     constructor();
-    private static createMenuElement();
-    private static createInputElement();
-    private static createGroupsUlElement();
-    private static createGroupLiElement(group);
-    private static createResultsUlElement();
-    private static createResultLiElement(command);
+    private static createMenuElement;
+    private static createInputElement;
+    private static createGroupsUlElement;
+    private static createGroupLiElement;
+    private static createResultsUlElement;
+    private static createResultLiElement;
     setGroups(groups: Array<CommandGroup>): void;
     addGroup(group: CommandGroup): void;
     removeAllGroups(): void;

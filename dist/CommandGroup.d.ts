@@ -4,9 +4,9 @@ export declare class CommandGroup {
     private filter;
     title: string;
     weight: number;
-    constructor({title, weight, isAvailable}: {
-        title: any;
-        weight?: number;
+    constructor({ title, weight, isAvailable }: {
+        title?: string | undefined;
+        weight?: number | undefined;
         isAvailable?: undefined;
     });
     setFilter(filter: string): void;

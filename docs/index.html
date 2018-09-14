@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.rawgit.com/Swaagie/prismjs-monokai/3d414719/prism-monokai.css">
   <link rel="stylesheet" href="./styles.css">
-  <link rel="stylesheet" href="https://rawgit.com/mattpjohnson/darkflex/master/dist/darkflex.min.css">
+  <link rel="stylesheet" href="https://rawgit.com/mattpjohnson/darkflex/master/dist/dotmenu.min.css">
 </head>
 <body>
   <div class="container">
@@ -89,6 +89,46 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.11.0/components/prism-javascript.min.js"></script>
   <script src="./console.log.hijacker.js"></script>
   <script src="./theme-change-handler.js"></script>
-  <script data-main="./app.js" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"></script>
+  <script src="https://rawgit.com/mattpjohnson/darkflex/master/dist/dotmenu.umd.js"></script>
+  <script>
+    dotmenu.commandRegistry.maxResultsPerGroup = 5;
+
+    const domGroup = new dotmenu.CommandGroup({ title: 'DOM Event commands', weight: 3 });
+    domGroup.registerCommand(new dotmenu.DOMEventsCommand({ title: 'Click the button', domEventSteps: [dotmenu.DOMEventStep.createClickEventStep('#click-this-button')] }));
+    domGroup.registerCommand(dotmenu.DOMEventsCommand.createClickEventCommand({ title: 'Click the button 2', element: '#click-this-button' }));
+    dotmenu.commandRegistry.registerCommandGroup(domGroup);
+
+    const exampleGroup1 = new dotmenu.CommandGroup({ title: 'Example group 1', weight: 2 });
+    exampleGroup1.registerCommand({ title: 'Action 1', run: function() { console.log('Group 1, Action 1') }});
+    exampleGroup1.registerCommand({ title: 'Action 2', run: function() { console.log('Group 1, Action 2') }});
+    dotmenu.commandRegistry.registerCommandGroup(exampleGroup1);
+
+    const exampleGroup2 = new dotmenu.CommandGroup({ title: 'Example group 2' });
+    exampleGroup2.registerCommand({ title: 'Action 1', run: function() { console.log('Group 2, Action 1') }});
+    exampleGroup2.registerCommand({ title: 'Action 2', run: function() { console.log('Group 2, Action 2') }});
+    exampleGroup2.registerCommand({ title: 'Action 3', run: function() { console.log('Group 2, Action 3') }});
+    exampleGroup2.registerCommand({ title: 'Action 4', run: function() { console.log('Group 2, Action 4') }});
+    exampleGroup2.registerCommand({ title: 'Action 5', run: function() { console.log('Group 2, Action 5') }});
+    exampleGroup2.registerCommand({ title: 'Action 6', run: function() { console.log('Group 2, Action 6') }});
+    exampleGroup2.registerCommand({ title: 'Action 7', run: function() { console.log('Group 2, Action 7') }});
+    dotmenu.commandRegistry.registerCommandGroup(exampleGroup2);
+
+    // This group will show at the top since it has a higher weight than the others.
+    const exampleGroup3 = new dotmenu.CommandGroup({ title: 'Example group 3', weight: 4 });
+    exampleGroup3.registerCommand({ title: 'Action 1', run: function() { console.log('Group 3, Action 1') }});
+    exampleGroup3.registerCommand({ title: 'Action 2', run: function() { console.log('Group 3, Action 2') }});
+    exampleGroup3.registerCommand({ title: 'Action 3', run: function() { console.log('Group 3, Action 3') }});
+    exampleGroup3.registerCommand({ title: 'Action 4', run: function() { console.log('Group 3, Action 4') }});
+    exampleGroup3.registerCommand({ title: 'Action 5', run: function() { console.log('Group 3, Action 5') }});
+    exampleGroup3.registerCommand({ title: 'Action 6', run: function() { console.log('Group 3, Action 6') }});
+    exampleGroup3.registerCommand({ title: 'Action 7', run: function() { console.log('Group 3, Action 7') }});
+    exampleGroup3.registerCommand({ title: 'Action 8', run: function() { console.log('Group 3, Action 8') }});
+    exampleGroup3.registerCommand({ title: 'Action 9', run: function() { console.log('Group 3, Action 9') }});
+    exampleGroup3.registerCommand({ title: 'Action 10', run: function() { console.log('Group 3, Action 10') }});
+    exampleGroup3.registerCommand({ title: 'Action 11', run: function() { console.log('Group 3, Action 11') }});
+    dotmenu.commandRegistry.registerCommandGroup(exampleGroup3);
+
+    dotmenu.commandRegistry.useDotEventListener();
+  </script>
 </body>
 </html>

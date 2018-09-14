@@ -1,38 +1,51 @@
 {
-  "name": "darkflex",
-  "version": "0.2.0",
+  "name": "dotmenu",
+  "version": "1.0.0",
   "description": "Command menu for modern browsers",
-  "main": "dist/darkflex.umd.js",
-  "types": "dist/types/index.d.ts",
+  "main": "dist/index.umd.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": "https://github.com/mattpjohnson/dotmenu",
+  "author": "Matt Johnson <matt@mattpjohnson.com>",
+  "license": "MIT",
   "scripts": {
-    "build": "npm run clean && webpack && rimraf dist/styles.*.js",
-    "clean": "rimraf dist",
-    "start": "webpack --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "yarn build:compile && yarn build:rollup && yarn build:css",
+    "build:compile": "tsc",
+    "build:css": "node-sass styles/styles.scss | postcss --use autoprefixer > dist/dotmenu.min.css",
+    "build:rollup": "rollup dist/index.js --file dist/dotmenu.umd.js --format umd --name dotmenu --sourcemap",
+    "lint": "tslint --project . 'src/**/*.ts'",
+    "start": "ts-node src/index.ts",
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
-  "author": "Matt Johnson <hello@mattpjohnson.com>",
-  "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/mattpjohnson/darkflex.git"
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    }
   },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint && jest --onlyChanged",
+      "pre-push": "yarn lint && jest"
+    }
+  },
   "devDependencies": {
-    "autoprefixer-loader": "^3.2.0",
-    "css-loader": "^0.28.11",
-    "editorconfig": "^0.15.0",
-    "extract-text-webpack-plugin": "^3.0.2",
-    "node-sass": "^4.9.0",
-    "rimraf": "^2.6.2",
-    "sass-loader": "^6.0.7",
-    "ts-loader": "^3.5.0",
-    "typescript": "^2.9.1",
-    "webpack": "^3.12.0"
-  },
-  "dependencies": {
-    "requirejs": "^2.3.5"
+    "autoprefixer": "^9.1.5",
+    "husky": "^1.0.0-rc.13",
+    "jest": "^23.5.0",
+    "node-sass": "^4.9.3",
+    "postcss-cli": "^6.0.0",
+    "prettier": "^1.14.2",
+    "rollup": "^0.65.2",
+    "ts-jest": "^23.1.4",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "tslint-plugin-prettier": "^1.3.0",
+    "typescript": "^3.0.3"
   }
 }

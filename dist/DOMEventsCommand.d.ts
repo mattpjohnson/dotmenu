@@ -7,12 +7,12 @@ export interface Props {
 }
 export declare class DOMEventsCommand extends Command {
     private domEventSteps;
-    constructor({title, description, domEventSteps}: Props);
+    constructor({ title, description, domEventSteps }: Props);
     registerDOMEventStep(step: DOMEventStep): void;
     run(): void;
     onSelect(): void;
     onDeselect(): void;
-    static createClickEventCommand({title, description, element}: {
+    static createClickEventCommand({ title, description, element, }: {
         title: string;
         description?: string;
         element: Element | string;

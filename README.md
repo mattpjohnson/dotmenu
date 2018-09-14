@@ -2,8 +2,12 @@
 Command menu for modern browsers.
 
 ## Installation
+`yarn add dotmenu`
+
+Or using npm
+
 `
-npm install --save-dev darkflex
+npm install dotmenu
 `
 
 ## Demo

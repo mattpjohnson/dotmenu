@@ -1,8 +1,8 @@
 var currentTheme = 'blue-light';
 
 function handleThemeChange(theme) {
-    document.body.classList.remove(`darkflex-theme-${currentTheme}`);
-    document.body.classList.add(`darkflex-theme-${theme}`);
+    document.body.classList.remove(`dotmenu-theme-${currentTheme}`);
+    document.body.classList.add(`dotmenu-theme-${theme}`);
     currentTheme = theme;
 }
 
