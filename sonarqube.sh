@@ -5,7 +5,7 @@ npx sonarqube-scanner \
   -Dsonar.tests=. \
   -Dsonar.test.inclusions=**/*.test.js \
   -Dsonar.exclusions=node_modules/**,coverage/**,dist/** \
-  -Dsonar.javascript.lcov.reportPaths=coverage/jest/lcov.info \
-  -Dsonar.testExecutionReportPaths=coverage/jest/testlog.xml \
+  -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info \
+  -Dsonar.testExecutionReportPaths=coverage/clover.xml \
   -Dsonar.host.url=https://sonarcloud.io \
   -Dsonar.login=$SONAR_LOGIN
