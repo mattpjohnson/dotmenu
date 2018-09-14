@@ -1,6 +1,7 @@
 import { Command } from './Command'
 import { CommandGroup } from './CommandGroup'
 import { commandRegistry } from './CommandRegistry'
+import { createElement } from './createElement'
 
 const INPUT_ELEMENT_TYPES: any = [
   HTMLInputElement.prototype,
@@ -9,9 +10,9 @@ const INPUT_ELEMENT_TYPES: any = [
 ]
 
 export class UI {
-  private menuElement: HTMLDivElement
+  private menuElement: HTMLElement
   private inputElement: HTMLInputElement
-  private groupsUlElement: HTMLUListElement
+  private groupsListElement: HTMLElement
   private escapeEventListener: string
   private inputSubscribers: Array<Function> = []
   private openSubscribers: Array<Function> = []
@@ -24,11 +25,10 @@ export class UI {
 
     this.menuElement = UI.createMenuElement()
     this.inputElement = UI.createInputElement()
-    this.groupsUlElement = UI.createGroupsUlElement()
+    this.groupsListElement = UI.createGroupsListElement()
     this.menuElement.appendChild(this.inputElement)
-    const resultsDiv = document.createElement('div')
-    resultsDiv.classList.add('dotmenu__results')
-    resultsDiv.appendChild(this.groupsUlElement)
+    const resultsDiv = createElement('div.dotmenu__results')
+    resultsDiv.appendChild(this.groupsListElement)
     this.menuElement.appendChild(resultsDiv)
     document.body.appendChild(this.menuElement)
 
@@ -60,44 +60,35 @@ export class UI {
   }
 
   private static createMenuElement() {
-    const div = document.createElement('div')
-    div.classList.add('dotmenu')
+    const div = createElement('div.dotmenu')
     div.tabIndex = -1
     return div
   }
 
   private static createInputElement() {
-    const input = document.createElement('input')
-    input.classList.add('dotmenu__input')
-    return input
+    return createElement('input.dotmenu__input') as HTMLInputElement
   }
 
-  private static createGroupsUlElement() {
-    const ul = document.createElement('ul')
-    ul.classList.add('dotmenu__groups')
-    return ul
+  private static createGroupsListElement() {
+    return createElement('ul.dotmenu__groups')
   }
 
   private static createGroupLiElement(group: CommandGroup) {
-    const li = document.createElement('li')
-    li.classList.add('dotmenu__group')
-    li.innerHTML = `<span class="dotmenu__group-title">${group.title}</span>`
-    return li
+    return createElement(
+      'li.dotmenu__group',
+      createElement('span.dotmenu__group-title', group.title)
+    )
   }
 
   private static createResultsUlElement() {
-    const ul = document.createElement('ul')
-    ul.classList.add('dotmenu__commands')
-    return ul
+    return createElement('ul.dotmenu__commands')
   }
 
   private static createResultLiElement(command: Command) {
-    const li = document.createElement('li')
-    li.classList.add('dotmenu__command')
-    li.innerHTML = `<span class="dotmenu__command-title">${
-      command.title
-    }</span>`
-    return li
+    return createElement(
+      'li.dotmenu__command',
+      createElement('span.dotmenu__command-title', command.title)
+    )
   }
 
   setGroups(groups: Array<CommandGroup>) {
@@ -116,7 +107,7 @@ export class UI {
       const resultLi = UI.createResultLiElement(command)
       command.element = resultLi
       resultLi.addEventListener('click', () => this.emitRun())
-      resultLi.addEventListener('mouseover', event => {
+      resultLi.addEventListener('mouseover', () => {
         for (const subscriber of this.selectSubscribers) {
           subscriber(command)
         }
@@ -125,11 +116,11 @@ export class UI {
     }
 
     groupLi.appendChild(resultsUl)
-    this.groupsUlElement.appendChild(groupLi)
+    this.groupsListElement.appendChild(groupLi)
   }
 
   removeAllGroups() {
-    this.groupsUlElement.innerHTML = ''
+    this.groupsListElement.innerHTML = ''
   }
 
   openMenu() {

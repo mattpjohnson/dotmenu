@@ -42,6 +42,29 @@
         return Command;
     }());
 
+    function createElement(querySelector) {
+        var children = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            children[_i - 1] = arguments[_i];
+        }
+        var _a = querySelector.split('.'), tag = _a[0], classes = _a.slice(1);
+        var element = document.createElement(tag);
+        for (var _b = 0, classes_1 = classes; _b < classes_1.length; _b++) {
+            var className = classes_1[_b];
+            element.classList.add(className);
+        }
+        for (var _c = 0, children_1 = children; _c < children_1.length; _c++) {
+            var child = children_1[_c];
+            if (typeof child === 'string') {
+                element.innerHTML += child;
+            }
+            else if (child instanceof HTMLElement) {
+                element.appendChild(child);
+            }
+        }
+        return element;
+    }
+
     var INPUT_ELEMENT_TYPES = [
         HTMLInputElement.prototype,
         HTMLTextAreaElement.prototype,
@@ -58,11 +81,10 @@
             this.onKeydown = this.onKeydown.bind(this);
             this.menuElement = UI.createMenuElement();
             this.inputElement = UI.createInputElement();
-            this.groupsUlElement = UI.createGroupsUlElement();
+            this.groupsListElement = UI.createGroupsListElement();
             this.menuElement.appendChild(this.inputElement);
-            var resultsDiv = document.createElement('div');
-            resultsDiv.classList.add('dotmenu__results');
-            resultsDiv.appendChild(this.groupsUlElement);
+            var resultsDiv = createElement('div.dotmenu__results');
+            resultsDiv.appendChild(this.groupsListElement);
             this.menuElement.appendChild(resultsDiv);
             document.body.appendChild(this.menuElement);
             var oldValue;
@@ -92,37 +114,24 @@
             });
         }
         UI.createMenuElement = function () {
-            var div = document.createElement('div');
-            div.classList.add('dotmenu');
+            var div = createElement('div.dotmenu');
             div.tabIndex = -1;
             return div;
         };
         UI.createInputElement = function () {
-            var input = document.createElement('input');
-            input.classList.add('dotmenu__input');
-            return input;
+            return createElement('input.dotmenu__input');
         };
-        UI.createGroupsUlElement = function () {
-            var ul = document.createElement('ul');
-            ul.classList.add('dotmenu__groups');
-            return ul;
+        UI.createGroupsListElement = function () {
+            return createElement('ul.dotmenu__groups');
         };
         UI.createGroupLiElement = function (group) {
-            var li = document.createElement('li');
-            li.classList.add('dotmenu__group');
-            li.innerHTML = "<span class=\"dotmenu__group-title\">" + group.title + "</span>";
-            return li;
+            return createElement('li.dotmenu__group', createElement('span.dotmenu__group-title', group.title));
         };
         UI.createResultsUlElement = function () {
-            var ul = document.createElement('ul');
-            ul.classList.add('dotmenu__commands');
-            return ul;
+            return createElement('ul.dotmenu__commands');
         };
         UI.createResultLiElement = function (command) {
-            var li = document.createElement('li');
-            li.classList.add('dotmenu__command');
-            li.innerHTML = "<span class=\"dotmenu__command-title\">" + command.title + "</span>";
-            return li;
+            return createElement('li.dotmenu__command', createElement('span.dotmenu__command-title', command.title));
         };
         UI.prototype.setGroups = function (groups) {
             this.removeAllGroups();
@@ -139,7 +148,7 @@
                 var resultLi = UI.createResultLiElement(command);
                 command.element = resultLi;
                 resultLi.addEventListener('click', function () { return _this.emitRun(); });
-                resultLi.addEventListener('mouseover', function (event) {
+                resultLi.addEventListener('mouseover', function () {
                     for (var _i = 0, _a = _this.selectSubscribers; _i < _a.length; _i++) {
                         var subscriber = _a[_i];
                         subscriber(command);
@@ -152,10 +161,10 @@
                 _loop_1(command);
             }
             groupLi.appendChild(resultsUl);
-            this.groupsUlElement.appendChild(groupLi);
+            this.groupsListElement.appendChild(groupLi);
         };
         UI.prototype.removeAllGroups = function () {
-            this.groupsUlElement.innerHTML = '';
+            this.groupsListElement.innerHTML = '';
         };
         UI.prototype.openMenu = function () {
             var _this = this;

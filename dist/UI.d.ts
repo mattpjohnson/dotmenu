@@ -3,7 +3,7 @@ import { CommandGroup } from './CommandGroup';
 export declare class UI {
     private menuElement;
     private inputElement;
-    private groupsUlElement;
+    private groupsListElement;
     private escapeEventListener;
     private inputSubscribers;
     private openSubscribers;
@@ -12,7 +12,7 @@ export declare class UI {
     constructor();
     private static createMenuElement;
     private static createInputElement;
-    private static createGroupsUlElement;
+    private static createGroupsListElement;
     private static createGroupLiElement;
     private static createResultsUlElement;
     private static createResultLiElement;

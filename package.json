@@ -36,6 +36,8 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.1.5",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.6.0",
     "husky": "^1.0.0-rc.13",
     "jest": "^23.5.0",
     "node-sass": "^4.9.3",
