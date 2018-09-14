@@ -20,11 +20,6 @@
     width: 400px;
 }
 
-.dotmenu:focus,
-.dotmenu__input:focus {
-    outline: none;
-}
-
 .dotmenu--open {
     display: block;
 }
@@ -42,6 +37,11 @@
     font-weight: 500;
     padding: 10px;
     width: 100%;
+}
+
+.dotmenu:focus,
+.dotmenu__input:focus {
+    outline: none;
 }
 
 .dotmenu__results {
