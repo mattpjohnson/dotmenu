@@ -21,4 +21,4 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      - run: yarn build && ./sonarqube.sh
+      - run: yarn test && yarn test:coverage && yarn build && ./sonarqube.sh

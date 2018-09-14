@@ -31,7 +31,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "yarn lint && jest --onlyChanged",
-      "pre-push": "yarn lint"
+      "pre-push": "yarn lint && jest"
     }
   },
   "devDependencies": {
