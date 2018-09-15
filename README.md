@@ -1,8 +1,8 @@
 # Dotmenu
 
-<div style="text-align: center">
+<p align="center">
   <img alt="banner image" src="https://github.com/mattpjohnson/dotmenu/blob/master/docs/banner.png">
-</div>
+</p>
 
 <p align="center">
   <a href="https://travis-ci.org/mattpjohnson/dotmenu">
