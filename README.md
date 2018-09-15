@@ -21,6 +21,9 @@
 
 ![theme demo](https://github.com/mattpjohnson/dotmenu/blob/master/docs/theme-demo.png)
 
+## Demo
+See the [demo](https://mattpjohnson.github.io/dotmenu)
+
 ## Installation
 `yarn add dotmenu`
 
@@ -69,8 +72,5 @@ group2.registerCommand(
     title: 'Click the button',
     element: '#click-this-button'
   })
-);
+)
 ```
-
-## Demo
-See the [demo](https://mattpjohnson.github.io/dotmenu)
