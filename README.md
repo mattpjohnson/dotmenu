@@ -19,10 +19,23 @@
   </a>
 </p>
 
-![theme demo](https://github.com/mattpjohnson/dotmenu/blob/master/docs/theme-demo.png)
+![demo video](docs/demo-video.gif)
 
 ## Demo
 See the [demo](https://mattpjohnson.github.io/dotmenu)
+
+## Themes
+Currently supported themes:
+* Blue (light)
+* Blue (dark)
+* Teal (light)
+* Teal (dark)
+
+To use a theme simply add this class to the body of your document.
+
+`dotmenu-theme-<color>-<light/dark>`
+
+![theme demo](https://github.com/mattpjohnson/dotmenu/blob/master/docs/theme-demo.png)
 
 ## Installation
 `yarn add dotmenu`
