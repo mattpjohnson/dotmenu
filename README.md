@@ -2,6 +2,8 @@
 
 > Command menu for modern browsers.
 
+![banner image](https://github.com/mattpjohnson/dotmenu/blob/master/docs/banner.png)
+
 <p>
   <a href="https://travis-ci.org/mattpjohnson/dotmenu">
     <img alt="Travis CI Build Status" src="https://img.shields.io/travis/mattpjohnson/dotmenu/master.svg?style=flat&label=Travis+CI">
@@ -26,11 +28,11 @@
   </a>
 </p>
 
-![demo video](https://github.com/mattpjohnson/dotmenu/blob/master/docs/demo-video.gif)
-
 ## Demo
 
-See the [demo](https://mattpjohnson.github.io/dotmenu)
+![demo video](https://github.com/mattpjohnson/dotmenu/blob/master/docs/demo-video.gif)
+
+You can see the demo [here](https://mattpjohnson.github.io/dotmenu).
 
 ## Themes
 
