@@ -1,6 +1,6 @@
 # Dotmenu
 
-![banner image](https://github.com/mattpjohnson/dotmenu/blob/master/docs/banner.png)
+<img align="center" alt="banner image" src="https://github.com/mattpjohnson/dotmenu/blob/master/docs/banner.png">
 
 <p align="center">
   <a href="https://travis-ci.org/mattpjohnson/dotmenu">
@@ -15,6 +15,8 @@
   <a href="https://sonarcloud.io/dashboard?id=mattpjohnson_dotmenu">
     <img alt="SonarQube Technical Debt" src="https://img.shields.io/sonar/http/sonarcloud.io/mattpjohnson_dotmenu/tech_debt.svg?style=flat">
   </a>
+</p>
+<p align="center">
   <a href="https://github.com/prettier/prettier#badge">
     <img alt="code style: prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat">
   </a>
