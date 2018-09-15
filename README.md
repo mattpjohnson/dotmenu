@@ -19,6 +19,8 @@
   </a>
 </p>
 
+![theme demo](https://github.com/mattpjohnson/dotmenu/blob/master/docs/theme-demo.png)
+
 ## Installation
 `yarn add dotmenu`
 
