@@ -2,7 +2,7 @@
 
 ![banner image](https://github.com/mattpjohnson/dotmenu/blob/master/docs/banner.png)
 
-<p>
+<p align="center">
   <a href="https://travis-ci.org/mattpjohnson/dotmenu">
     <img alt="Travis CI Build Status" src="https://img.shields.io/travis/mattpjohnson/dotmenu/master.svg?style=flat&label=Travis+CI">
   </a>
