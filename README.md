@@ -28,5 +28,47 @@ Or using npm
 npm install dotmenu
 `
 
+## Usage
+First, import dotmenu using one of the following methods:
+
+If you're using a bundler:
+```javascript
+import * as dotmenu from 'dotmenu'
+```
+
+Otherwise, add this to your `index.html`:
+```html
+<script src="https://rawgit.com/mattpjohnson/darkflex/master/dist/dotmenu.umd.js"></script>
+```
+
+Now register your commands with dotmenu.
+```javascript
+function exampleAction1() {
+  console.log('Action 1')
+}
+
+function exampleAction2() {
+  console.log('Action 2')
+}
+
+const group1 = new dotmenu.CommandGroup({ title: 'Example group 1' })
+group1.registerCommand({ title: 'Action 1', run: exampleAction1 })
+group1.registerCommand({ title: 'Action 2', run: exampleAction2 })
+dotmenu.commandRegistry.registerCommandGroup(group1)
+
+dotmenu.commandRegistry.useDotEventListener()
+```
+
+The majority of dotmenu commands are just shortcuts for clicking on something. There's a handy helper for this:
+```javascript
+const group2 = new dotmenu.CommandGroup({ title: 'Example group 2' });
+group2.registerCommand(
+  dotmenu.DOMEventsCommand.createClickEventCommand({
+    title: 'Click the button',
+    element: '#click-this-button'
+  })
+);
+```
+
 ## Demo
 See the [demo](https://mattpjohnson.github.io/dotmenu)
