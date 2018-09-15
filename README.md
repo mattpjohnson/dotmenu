@@ -1,7 +1,5 @@
 # Dotmenu
 
-> Command menu for modern browsers.
-
 ![banner image](https://github.com/mattpjohnson/dotmenu/blob/master/docs/banner.png)
 
 <p>
