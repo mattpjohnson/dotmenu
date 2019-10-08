@@ -1,7 +1,7 @@
 # Dotmenu
 
 <p align="center">
-  <img alt="banner image" src="https://github.com/mattpjohnson/dotmenu/blob/master/readme-assets/banner.png">
+  <img alt="banner image" src="https://github.com/mattpjohnson/dotmenu/blob/master/homepage/banner.png">
 </p>
 
 <p align="center">
@@ -30,7 +30,7 @@
 
 ## Demo
 
-![demo video](https://github.com/mattpjohnson/dotmenu/blob/master/readme-assets/demo-video.gif)
+![demo video](https://github.com/mattpjohnson/dotmenu/blob/master/homepage/demo-video.gif)
 
 You can see the demo [here](https://mattpjohnson.github.io/dotmenu).
 
@@ -47,7 +47,7 @@ To use a theme simply add this class to the body of your document.
 
 `dotmenu-theme-<color>-<light/dark>`
 
-![theme demo](https://github.com/mattpjohnson/dotmenu/blob/master/readme-assets/theme-demo.png)
+![theme demo](https://github.com/mattpjohnson/dotmenu/blob/master/homepage/theme-demo.png)
 
 ## Installation
 
