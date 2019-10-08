@@ -34,11 +34,13 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint && jest --onlyChanged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-push": "yarn lint && jest"
     }
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
     "autoprefixer": "^9.1.5",
     "babel-core": "^6.26.3",
     "babel-jest": "^23.6.0",
