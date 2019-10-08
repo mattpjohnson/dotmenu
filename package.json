@@ -16,7 +16,7 @@
     "commit": "git-cz",
     "doc": "yarn doc:ts && yarn doc:changelog",
     "doc:changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-    "doc:ts": "typedoc --out docs src/",
+    "doc:ts": "typedoc --out docs/documentation src/",
     "lint": "tslint --project . 'src/**/*.ts'",
     "start": "ts-node src/index.ts",
     "test": "jest",
