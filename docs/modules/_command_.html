@@ -3,17 +3,17 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>dotmenu</title>
+	<title>&quot;Command&quot; | dotmenu</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body>
 <header>
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">dotmenu</a>
+					<a href="../index.html" class="title">dotmenu</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -53,144 +53,82 @@
 		<div class="container">
 			<ul class="tsd-breadcrumb">
 				<li>
-					<a href="globals.html">Globals</a>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="_command_.html">&quot;Command&quot;</a>
 				</li>
 			</ul>
-			<h1> dotmenu</h1>
+			<h1>External module &quot;Command&quot;</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<div class="tsd-panel tsd-typography">
-				<a href="#dotmenu" id="dotmenu" style="color: inherit; text-decoration: none;">
-					<h1>Dotmenu</h1>
-				</a>
-				<p align="center">
-					<img alt="banner image" src="https://github.com/mattpjohnson/dotmenu/blob/master/docs/banner.png">
-				</p>
-				<p align="center">
-					<a href="https://travis-ci.org/mattpjohnson/dotmenu">
-						<img alt="Travis CI Build Status" src="https://img.shields.io/travis/mattpjohnson/dotmenu/master.svg?style=flat&label=Travis+CI">
-					</a>
-					<a href="https://circleci.com/gh/mattpjohnson/dotmenu">
-						<img alt="CircleCI Build Status" src="https://img.shields.io/circleci/project/github/mattpjohnson/dotmenu/master.svg?style=flat&label=CircleCI">
-					</a>
-					<a href="https://codecov.io/gh/mattpjohnson/dotmenu">
-						<img alt="Codecov Coverage Status" src="https://img.shields.io/codecov/c/github/mattpjohnson/dotmenu.svg?style=flat">
-					</a>
-					<a href="https://sonarcloud.io/dashboard?id=mattpjohnson_dotmenu">
-						<img alt="SonarQube Technical Debt" src="https://img.shields.io/sonar/http/sonarcloud.io/mattpjohnson_dotmenu/tech_debt.svg?style=flat">
-					</a>
-					<a href="https://github.com/prettier/prettier#badge">
-						<img alt="code style: prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat">
-					</a>
-					<a href="https://www.npmjs.com/package/dotmenu">
-						<img alt="npm bundle size (minified)" src="https://img.shields.io/bundlephobia/min/dotmenu.svg">
-					</a>
-					<a href="https://www.npmjs.com/package/dotmenu">
-						<img alt="npm" src="https://img.shields.io/npm/v/dotmenu.svg">
-					</a>
-				</p>
-				<a href="#demo" id="demo" style="color: inherit; text-decoration: none;">
-					<h2>Demo</h2>
-				</a>
-				<p><img src="https://github.com/mattpjohnson/dotmenu/blob/master/docs/demo-video.gif" alt="demo video"></p>
-				<p>You can see the demo <a href="https://mattpjohnson.github.io/dotmenu">here</a>.</p>
-				<a href="#themes" id="themes" style="color: inherit; text-decoration: none;">
-					<h2>Themes</h2>
-				</a>
-				<p>Currently supported themes:</p>
-				<ul>
-					<li>Blue (light)</li>
-					<li>Blue (dark)</li>
-					<li>Teal (light)</li>
-					<li>Teal (dark)</li>
-				</ul>
-				<p>To use a theme simply add this class to the body of your document.</p>
-				<p><code>dotmenu-theme-&lt;color&gt;-&lt;light/dark&gt;</code></p>
-				<p><img src="https://github.com/mattpjohnson/dotmenu/blob/master/docs/theme-demo.png" alt="theme demo"></p>
-				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
-					<h2>Installation</h2>
-				</a>
-				<p><code>yarn add dotmenu</code></p>
-				<p>Or using npm</p>
-				<p><code>npm install dotmenu</code></p>
-				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
-					<h2>Usage</h2>
-				</a>
-				<p>First, import dotmenu using one of the following methods:</p>
-				<p>If you&#39;re using a bundler:</p>
-				<pre><code class="language-javascript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> dotmenu <span class="hljs-keyword">from</span> <span class="hljs-string">'dotmenu'</span></code></pre>
-				<p>Otherwise, add this to your <code>index.html</code>:</p>
-				<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://rawgit.com/mattpjohnson/darkflex/master/dist/dotmenu.umd.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
-				<p>Now register your commands with dotmenu.</p>
-				<pre><code class="language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">exampleAction1</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Action 1'</span>)
-}
-
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">exampleAction2</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Action 2'</span>)
-}
-
-<span class="hljs-keyword">const</span> group1 = <span class="hljs-keyword">new</span> dotmenu.CommandGroup({ <span class="hljs-attr">title</span>: <span class="hljs-string">'Example group 1'</span> })
-group1.registerCommand({ <span class="hljs-attr">title</span>: <span class="hljs-string">'Action 1'</span>, <span class="hljs-attr">run</span>: exampleAction1 })
-group1.registerCommand({ <span class="hljs-attr">title</span>: <span class="hljs-string">'Action 2'</span>, <span class="hljs-attr">run</span>: exampleAction2 })
-dotmenu.commandRegistry.registerCommandGroup(group1)
-
-dotmenu.commandRegistry.useDotEventListener()</code></pre>
-				<p>The majority of dotmenu commands are just shortcuts for clicking on something. There&#39;s a handy helper for this:</p>
-				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> group2 = <span class="hljs-keyword">new</span> dotmenu.CommandGroup({ <span class="hljs-attr">title</span>: <span class="hljs-string">'Example group 2'</span> })
-group2.registerCommand(
-  dotmenu.DOMEventsCommand.createClickEventCommand({
-    <span class="hljs-attr">title</span>: <span class="hljs-string">'Click the button'</span>,
-    <span class="hljs-attr">element</span>: <span class="hljs-string">'#click-this-button'</span>,
-  })
-)</code></pre>
-				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
-					<h1>License</h1>
-				</a>
-				<p>MIT</p>
-			</div>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Classes</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-class tsd-parent-kind-external-module"><a href="../classes/_command_.command.html" class="tsd-kind-icon">Command</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Interfaces</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface tsd-parent-kind-external-module"><a href="../interfaces/_command_.icommand.html" class="tsd-kind-icon">ICommand</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
 					<li class="globals  ">
-						<a href="globals.html"><em>Globals</em></a>
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class="current tsd-kind-external-module">
+						<a href="_command_.html">"<wbr>Command"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_command_.html">"<wbr>Command"</a>
+						<a href="_commandgroup_.html">"<wbr>Command<wbr>Group"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_commandgroup_.html">"<wbr>Command<wbr>Group"</a>
+						<a href="_commandregistry_.html">"<wbr>Command<wbr>Registry"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_commandregistry_.html">"<wbr>Command<wbr>Registry"</a>
+						<a href="_domeventscommand_.html">"DOMEvents<wbr>Command"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_domeventscommand_.html">"DOMEvents<wbr>Command"</a>
+						<a href="_domeventsstep_.html">"DOMEvents<wbr>Step"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_domeventsstep_.html">"DOMEvents<wbr>Step"</a>
+						<a href="_recentcommandgroup_.html">"<wbr>Recent<wbr>Command<wbr>Group"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_recentcommandgroup_.html">"<wbr>Recent<wbr>Command<wbr>Group"</a>
+						<a href="_ui_.html">"UI"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_ui_.html">"UI"</a>
+						<a href="_createelement_.html">"create<wbr>Element"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_createelement_.html">"create<wbr>Element"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_index_.html">"index"</a>
+						<a href="_index_.html">"index"</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="../classes/_command_.command.html" class="tsd-kind-icon">Command</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_command_.icommand.html" class="tsd-kind-icon">ICommand</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
@@ -260,7 +198,7 @@ group2.registerCommand(
 	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
-<script src="assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

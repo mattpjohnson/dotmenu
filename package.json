@@ -13,8 +13,10 @@
     "build:compile": "tsc",
     "build:css": "node-sass styles/styles.scss | postcss --use autoprefixer > dist/dotmenu.min.css",
     "build:rollup": "rollup dist/index.js --file dist/dotmenu.umd.js --format umd --name dotmenu --sourcemap",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "commit": "git-cz",
+    "doc": "yarn doc:ts && yarn doc:changelog",
+    "doc:changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "doc:ts": "typedoc --out docs src/",
     "lint": "tslint --project . 'src/**/*.ts'",
     "start": "ts-node src/index.ts",
     "test": "jest",
@@ -60,6 +62,7 @@
     "ts-node": "^7.0.1",
     "tslint": "^5.11.0",
     "tslint-plugin-prettier": "^1.3.0",
+    "typedoc": "^0.15.0",
     "typescript": "^3.0.3"
   },
   "config": {
