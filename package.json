@@ -28,10 +28,10 @@
       "tsx",
       "js"
     ],
+    "testRegex": ".*\\.test\\.(ts|tsx|js)$",
     "transform": {
       "^.+\\.(ts|tsx)$": "ts-jest"
-    },
-    "testResultsProcessor": "jest-sonar-reporter"
+    }
   },
   "jestSonar": {
     "reportPath": "coverage"
@@ -45,6 +45,7 @@
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
+    "@types/jest": "^24.0.18",
     "autoprefixer": "^9.1.5",
     "babel-core": "^6.26.3",
     "babel-jest": "^23.6.0",

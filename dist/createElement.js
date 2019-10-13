@@ -17,6 +17,9 @@ export function createElement(querySelector) {
         else if (child instanceof HTMLElement) {
             element.appendChild(child);
         }
+        else {
+            throw new Error('children must be string or HTMLElement');
+        }
     }
     return element;
 }
