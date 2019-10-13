@@ -1,7 +1,8 @@
 import { Command, ICommand } from './Command'
-import { commandRegistry } from './CommandRegistry'
+import { CommandRegistry } from './CommandRegistry'
 
 export class CommandGroup {
+  private commandRegistry?: CommandRegistry
   protected commands: Array<Command> = []
   private filter = ''
   title: string
@@ -12,6 +13,10 @@ export class CommandGroup {
     this.weight = weight
 
     this.isAvailable = isAvailable || this.isAvailable
+  }
+
+  setCommandRegistry(commandRegistry: CommandRegistry) {
+    this.commandRegistry = commandRegistry
   }
 
   setFilter(filter: string) {
@@ -39,8 +44,11 @@ export class CommandGroup {
   }
 
   get filteredCommands() {
+    const maxResults = this.commandRegistry
+      ? this.commandRegistry.maxResultsPerGroup
+      : Number.MAX_SAFE_INTEGER
     return this.availableCommands
       .filter(command => command.matches(this.filter))
-      .slice(0, commandRegistry.maxResultsPerGroup)
+      .slice(0, maxResults)
   }
 }
