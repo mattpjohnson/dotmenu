@@ -8,6 +8,7 @@ export class CommandRegistry {
   maxResultsPerGroup = 10
 
   registerCommandGroup(commandGroup: CommandGroup) {
+    commandGroup.setCommandRegistry(this)
     this.commandGroups.push(commandGroup)
   }
 

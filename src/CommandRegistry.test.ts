@@ -1,15 +1,37 @@
 import { CommandGroup } from './CommandGroup'
 import { CommandRegistry } from './CommandRegistry'
 
+const ape = {
+  title: 'ape',
+  run: Function,
+}
+const badger = {
+  title: 'badger',
+  run: Function,
+}
+const butterfly = {
+  title: 'butterfly',
+  run: Function,
+}
+const cat = {
+  title: 'cat',
+  run: Function,
+}
+const dog = {
+  title: 'dog',
+  run: Function,
+}
+const elk = {
+  title: 'elk',
+  run: Function,
+}
+
 test('registers commands successfully', () => {
   const commandRegistry = new CommandRegistry()
   commandRegistry.maxResultsPerGroup = 5
 
   const domGroup = new CommandGroup({})
-  domGroup.registerCommand({
-    title: '',
-    run: Function,
-  })
+  domGroup.registerCommand(ape)
 
   commandRegistry.registerCommandGroup(domGroup)
 
@@ -21,10 +43,7 @@ test('de-registers commands successfully', () => {
   commandRegistry.maxResultsPerGroup = 5
 
   const domGroup = new CommandGroup({})
-  domGroup.registerCommand({
-    title: '',
-    run: Function,
-  })
+  domGroup.registerCommand(ape)
 
   commandRegistry.registerCommandGroup(domGroup)
   commandRegistry.unregisterCommandGroup(domGroup)
@@ -38,22 +57,10 @@ test('filters commands correctly', () => {
 
   const domGroup = new CommandGroup({})
 
-  domGroup.registerCommand({
-    title: 'ape',
-    run: Function,
-  })
-  domGroup.registerCommand({
-    title: 'badger',
-    run: Function,
-  })
-  domGroup.registerCommand({
-    title: 'cat',
-    run: Function,
-  })
-  domGroup.registerCommand({
-    title: 'butterfly',
-    run: Function,
-  })
+  domGroup.registerCommand(ape)
+  domGroup.registerCommand(badger)
+  domGroup.registerCommand(cat)
+  domGroup.registerCommand(butterfly)
 
   commandRegistry.registerCommandGroup(domGroup)
   commandRegistry.setFilter('b')
@@ -63,4 +70,24 @@ test('filters commands correctly', () => {
       commandGroup.filteredCommands.map(command => command.title)
     )
   ).toEqual([['badger', 'butterfly']])
+})
+
+test('only shows maxResultsPerGroup worth of commands per group', () => {
+  const commandRegistry = new CommandRegistry()
+
+  const domGroup = new CommandGroup({})
+
+  domGroup.registerCommand(ape)
+  domGroup.registerCommand(badger)
+  domGroup.registerCommand(butterfly)
+  domGroup.registerCommand(cat)
+  domGroup.registerCommand(dog)
+  domGroup.registerCommand(elk)
+
+  commandRegistry.registerCommandGroup(domGroup)
+
+  commandRegistry.maxResultsPerGroup = 4
+  expect(commandRegistry.filteredCommandGroups[0].filteredCommands.length).toBe(
+    4
+  )
 })
