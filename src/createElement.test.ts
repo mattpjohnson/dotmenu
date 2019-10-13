@@ -1,4 +1,4 @@
-const { createElement } = require('./createElement');
+const { createElement } = require('./createElement')
 
 test('should create empty tag', () => {
   const element = createElement('div')
@@ -16,6 +16,11 @@ test('should fail when child is neither string nor HTMLElement', () => {
 })
 
 test('should create tag with classes and children', () => {
-  const element = createElement('div.with-class.another-class', createElement('span.child-class', 'Hello, World!'))
-  expect(element.outerHTML).toBe('<div class="with-class another-class"><span class="child-class">Hello, World!</span></div>')
+  const element = createElement(
+    'div.with-class.another-class',
+    createElement('span.child-class', 'Hello, World!')
+  )
+  expect(element.outerHTML).toBe(
+    '<div class="with-class another-class"><span class="child-class">Hello, World!</span></div>'
+  )
 })
