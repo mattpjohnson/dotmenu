@@ -44,15 +44,17 @@ export class CommandRegistry {
       this.selectCommand(command)
     })
 
-    ui.onRun(() => {
-      if (this.selectedCommand) {
-        this.selectedCommand.run()
-      }
-    })
+    ui.onRun(() => this.runSelectedCommand())
 
     ui.onSelect((command: Command) => {
       this.selectCommand(command)
     })
+  }
+
+  runSelectedCommand() {
+    if (this.selectedCommand) {
+      this.selectedCommand.run()
+    }
   }
 
   selectCommand(command: Command) {
