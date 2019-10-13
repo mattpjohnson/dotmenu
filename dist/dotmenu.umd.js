@@ -61,6 +61,9 @@
             else if (child instanceof HTMLElement) {
                 element.appendChild(child);
             }
+            else {
+                throw new Error('children must be string or HTMLElement');
+            }
         }
         return element;
     }
@@ -437,6 +440,13 @@
             d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
         };
     })();
+    var __spreadArrays = (undefined && undefined.__spreadArrays) || function () {
+        for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+        for (var r = Array(s), k = 0, i = 0; i < il; i++)
+            for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+                r[k] = a[j];
+        return r;
+    };
     var DOMEventsCommand = (function (_super) {
         __extends(DOMEventsCommand, _super);
         function DOMEventsCommand(_a) {
@@ -448,7 +458,7 @@
             }) || this;
             _this.domEventSteps = [];
             if (domEventSteps) {
-                _this.domEventSteps = _this.domEventSteps.concat(domEventSteps);
+                _this.domEventSteps = __spreadArrays(_this.domEventSteps, domEventSteps);
             }
             return _this;
         }
