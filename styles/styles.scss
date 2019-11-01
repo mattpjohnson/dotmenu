@@ -1,93 +1,93 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400, 300, 700');
 @import 'theme-mixins.scss';
 @import 'themes.scss';
 
 .dotmenu {
-    @include themify($themes) {
-        background-color: themed('bg-color');
-        font-family: themed('font-family');
-    }
+  @include themify($themes) {
+    background-color: themed('bg-color');
+    font-family: themed('font-family');
+  }
 
-    border: 1px solid gray;
-    border-radius: 4px;
-    box-shadow: 2px 2px 4px 3px rgba(80, 80, 80, 0.25);
-    box-sizing: border-box;
-    display: none;
-    left: calc(50% - 200px);
-    max-width: 90vw;
-    position: fixed;
-    top: 50px;
-    width: 400px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  box-shadow: 2px 2px 4px 3px rgba(80, 80, 80, 0.25);
+  box-sizing: border-box;
+  display: none;
+  left: calc(50% - 200px);
+  max-width: 90vw;
+  position: fixed;
+  top: 50px;
+  width: 400px;
 }
 
 .dotmenu--open {
-    display: block;
+  display: block;
 }
 
 .dotmenu__input {
-    @include themify($themes) {
-        color: themed('input-text-color');
-    }
+  @include themify($themes) {
+    color: themed('input-text-color');
+  }
 
-    background-color: transparent;
-    border: none;
-    border-bottom: 2px solid #03A9F4;
-    box-sizing: border-box;
-    font-size: 18px;
-    font-weight: 500;
-    padding: 10px;
-    width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #03a9f4;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px;
+  width: 100%;
 }
 
 .dotmenu:focus,
 .dotmenu__input:focus {
-    outline: none;
+  outline: none;
 }
 
 .dotmenu__results {
-    max-height: 300px;
-    overflow-y: auto;
+  max-height: 300px;
+  overflow-y: auto;
 }
 
 .dotmenu__groups,
 .dotmenu__commands {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .dotmenu__group {
-    margin: 8px 0;
+  margin: 8px 0;
 }
 
 .dotmenu__group-title {
-    @include themify($themes) {
-        color: themed('group-title-text-color');
-    }
+  @include themify($themes) {
+    color: themed('group-title-text-color');
+  }
 
-    font-size: 12px;
-    font-weight: 600;
-    padding: 6px 8px;
-    text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 8px;
+  text-transform: uppercase;
 }
 
 .dotmenu__command-title {
-    padding: 6px 16px;
+  padding: 6px 16px;
 }
 
 .dotmenu__command {
-    @include themify($themes) {
-        color: themed('command-text-color');
-    }
+  @include themify($themes) {
+    color: themed('command-text-color');
+  }
 
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .dotmenu__command--selected {
-    @include themify($themes) {
-        background-color: themed('command-bg-color--selected-state');
-        color: themed('command-text-color--selected-state');
-    }
+  @include themify($themes) {
+    background-color: themed('command-bg-color--selected-state');
+    color: themed('command-text-color--selected-state');
+  }
 
-    font-weight: 500;
+  font-weight: 500;
 }
