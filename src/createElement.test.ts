@@ -1,4 +1,4 @@
-const { createElement } = require('./createElement')
+import { createElement } from './createElement'
 
 test('should create empty tag', () => {
   const element = createElement('div')
@@ -11,8 +11,8 @@ test('should create empty tag with class', () => {
 })
 
 test('should fail when child is neither string nor HTMLElement', () => {
-  expect(() => createElement('div', 999)).toThrowError()
-  expect(() => createElement('div', {})).toThrowError()
+  expect(() => (createElement as any)('div', 999)).toThrowError()
+  expect(() => (createElement as any)('div', {})).toThrowError()
 })
 
 test('should create tag with classes and children', () => {

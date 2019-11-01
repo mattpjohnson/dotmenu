@@ -1,6 +1,15 @@
-export * from './Command'
-export * from './CommandGroup'
-export * from './CommandRegistry'
-export * from './DOMEventsCommand'
-export * from './DOMEventsStep'
-export * from './UI'
+import * as Command from './Command'
+import * as CommandGroup from './CommandGroup'
+import * as CommandRegistry from './CommandRegistry'
+import * as DOMEventsCommand from './DOMEventsCommand'
+import * as DOMEventsStep from './DOMEventsStep'
+import * as UI from './UI'
+
+export const dotmenu = {
+  ...Command,
+  ...CommandGroup,
+  ...CommandRegistry,
+  ...DOMEventsCommand,
+  ...DOMEventsStep,
+  ...UI,
+}

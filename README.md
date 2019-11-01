@@ -64,7 +64,7 @@ First, import dotmenu using one of the following methods:
 If you're using a bundler:
 
 ```javascript
-import * as dotmenu from 'dotmenu'
+import { dotmenu } from 'dotmenu'
 ```
 
 Otherwise, add this to your `index.html`:
