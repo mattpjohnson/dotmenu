@@ -13,8 +13,8 @@ export declare class CommandRegistry {
     deselectCommand(command: Command): void;
     selectNextFilteredCommand(): void;
     selectPrevFilteredCommand(): void;
-    private readonly availableCommandGroups;
-    private readonly filteredCommands;
-    readonly filteredCommandGroups: CommandGroup[];
+    private get availableCommandGroups();
+    private get filteredCommands();
+    get filteredCommandGroups(): CommandGroup[];
 }
 export declare const commandRegistry: CommandRegistry;

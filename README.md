@@ -68,7 +68,7 @@ import { dotmenu } from 'dotmenu'
 Otherwise, add this to your `index.html`:
 
 ```html
-<script src="https://rawgit.com/mattpjohnson/darkflex/master/dist/dotmenu.umd.js"></script>
+<script src="https://rawgit.com/mattpjohnson/dotmenu/master/dist/dotmenu.umd.js"></script>
 ```
 
 Now register your commands with dotmenu.

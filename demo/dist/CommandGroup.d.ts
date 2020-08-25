@@ -16,6 +16,6 @@ export declare class CommandGroup {
     isAvailable(): boolean;
     isAvailableInContext(): boolean;
     registerCommand(command: ICommand): void;
-    private readonly availableCommands;
-    readonly filteredCommands: Command[];
+    private get availableCommands();
+    get filteredCommands(): Command[];
 }
