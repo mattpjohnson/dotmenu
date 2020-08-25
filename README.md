@@ -1,7 +1,7 @@
 # Dotmenu
 
 <p align="center">
-  <img alt="banner image" src="https://github.com/mattpjohnson/dotmenu/raw/master/docs/banner.svg">
+  <img alt="banner image" src="https://github.com/mattpjohnson/dotmenu/raw/master/docs/banner.png">
 </p>
 
 <p align="center">
