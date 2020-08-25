@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1640 664" width="1640" height="664">
+	<defs>
+		<image width="1640" height="664" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABmgAAAKYAQMAAABNauWRAAAAAXNSR0IB2cksfwAAAANQTFRF////p8QbyAAAAJtJREFUeJztwYEAAAAAw6D5U1/hAFUBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAbxZuAAF+/+jwAAAAAElFTkSuQmCC"/>
+		<linearGradient id="grd1" gradientUnits="userSpaceOnUse"  x1="166.549" y1="-156.04" x2="751.851" y2="992.68">
+			<stop offset="0" stop-color="#3f5efb"  />
+			<stop offset="1" stop-color="#fc466b"  />
+		</linearGradient>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+		.txt0 { font-size: 150px;fill: #ffffff;font-weight: 300;font-family: "Existence-Light", "Existence";text-anchor: middle } 
+	</style>
+	<use id="Background" href="#img1" x="0" y="0" />
+	<rect width="1640" height="664" id="Gradient Fill 1" style="fill: url(#grd1)" />
+	<text id="Dotmenu " style="transform: matrix(1,0,0,1,820,261)" >
+		<tspan x="0" y="150" class="txt0">Dotmenu</tspan>
+	</text>
+</svg>
