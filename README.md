@@ -26,27 +26,6 @@
   </a>
 </p>
 
-## Demo
-
-![demo video](https://github.com/mattpjohnson/dotmenu/raw/master/docs/demo-video.gif)
-
-You can see the demo [here](https://mattpjohnson.github.io/dotmenu).
-
-## Themes
-
-Currently supported themes:
-
-- Blue (light)
-- Blue (dark)
-- Teal (light)
-- Teal (dark)
-
-To use a theme simply add this class to the body of your document.
-
-`dotmenu-theme-<color>-<light/dark>`
-
-![theme demo](https://github.com/mattpjohnson/dotmenu/raw/master/docs/theme-demo.png)
-
 ## Installation
 
 `yarn add dotmenu`
@@ -68,7 +47,7 @@ import { dotmenu } from 'dotmenu'
 Otherwise, add this to your `index.html`:
 
 ```html
-<script src="https://rawgit.com/mattpjohnson/dotmenu/master/dist/dotmenu.umd.js"></script>
+<script src="https://rawgit.com/mattpjohnson/dotmenu/master/dist/dotmenu.umd.min.js"></script>
 ```
 
 Now register your commands with dotmenu.
